@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "python-web-hw8"
+version = "0.1.0"
+description = ""
+authors = ["Roman <Tesmail@i.ua>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pymongo = {extras = ["srv", "tls"], version = "^4.6.0"}
+mongoengine = "^0.27.0"
+connect = "^0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
