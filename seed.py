@@ -1,7 +1,8 @@
 from config.models import Author , Quote
 from mongoengine.errors import NotUniqueError
-from config.db import connect
+from config.db import mongoconect
 import json
+
 
 
 author_data = 'authors.json'
@@ -29,16 +30,6 @@ def author(data_a):
                 print(f"Автор вже існує {el.get('fullname')}")
 
 if __name__ == "__main__":
+    mongoconect()
     author(author_data)
     qoute(quote_data)
-
-# author = Author(fullname=el.get('fullname'), born_date=el.get('born_date'),
-#                                 born_location=el.get('born_location'), description=el.get('description'))
-# # потім - створення об'єктів Record
-# record1 = Record(description='Buying sausage')
-# record2 = Record(description='Buying milk')
-# record3 = Record(description='Buying oil')
-# #  Останнє - створюємо об'єкт Note і зберігаємо його
-# Notes(name='Shopping', records=[record1, record2, record3], tags=[tag, ]).save()
-
-# Notes(name='Going to the movies', records=[Record(description='Went to see the Avengers'), ], tags=[Tag(name='Fun'), ]).save()
