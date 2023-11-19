@@ -28,6 +28,7 @@ def mongoclient():
         print("Pinged your deployment. You successfully connected to MongoDB!")
     except Exception as e:
         print(e)
+    return client
 #print(f"""mongodb+srv://{user}:{password}@{domain}/{db_name}?retryWrites=true&w=majority""")
 
 # ### for mongoengine connect
